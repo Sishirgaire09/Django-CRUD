@@ -11,7 +11,16 @@
   <div class="container">
     <div class = "col-md-10 offset-md-1 mt-5">
       <div class="jumbotron">
+        <div class="d-flex w-100 justify-content-between">
         <h1 class="display-4">Table List</h1>
+        {% if user.is_authenticated %}
+        <p>Welcome {{ user.username }} !!!</p> 
+        <button type="button" class="btn btn-primary click" onclick="location.href='{% url 'logout' %}'" >
+          Log out 
+        </button>
+        
+        {% endif %}
+        </div>
         <p class="lead">This is the Python Django project using CRUD operations </p>
         <hr class="my-4">
         {%block content%}
@@ -27,3 +36,4 @@
   
 </body>
 </html>
+

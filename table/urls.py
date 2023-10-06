@@ -1,6 +1,8 @@
 from django.urls import path ,include 
 from . import views
 
+app_name = "table"
+
 urlpatterns = [
     path("<int:id>/", views.table_form , name = 'table-form'), #get anf post req. for update operation
     path("", views.table_form , name = 'table-form'), #get anf post req. for insert operation 
@@ -8,3 +10,4 @@ urlpatterns = [
     path("table_delete/<int:id>/", views.table_delete , name = 'table-delete'),
 
 ]
+

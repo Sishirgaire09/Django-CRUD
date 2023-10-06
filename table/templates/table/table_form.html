@@ -3,7 +3,7 @@
 {%block content%}
 <p>Here you'll see CRUD Operations</p>
  
-<form action= "{%url 'table-form'%}" method="POST"> {% csrf_token %}
+<form action= "{%url 'table:table-form'%}" method="POST"> {% csrf_token %}
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
     <input value="{{product.product_name}}" name="product-name" type="name" class="form-control" id="exampleInputEmail1" aria-describedby="name">
@@ -27,13 +27,14 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <div>
+
+  <div style="display : flex; width : 100%">
     <div class = "col-md-8">
         <button type="submit" class="btn btn-success"><i class="fa-solid fa-database" style="color: #ffffff;"></i>&nbsp; &nbsp;Submit</button>
     </div>
-    <div class="col-md-4">
-      <a href="{%url 'table-list'%}" class = "btn btn-secondary btn-block btn-lg" >
-        <i class = "fas fa-stream"></i>Back to list </a>
+    <div class="col-md-4" >
+      <a href="{%url 'table:table-list'%}" class = "btn btn-secondary btn-block btn-lg"  >
+        <i class = "fas fa-stream" ></i> Back to list </a>
     </div>
   </div>
 </form>
